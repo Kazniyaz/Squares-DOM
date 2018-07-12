@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <style>
+    .squareContainer {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .buttonContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      border: solid 1px black;
+    }
+
+    #red {
+      background-color: red;
+    }
+
+    #green {
+      background-color: green;
+    }
+
+    #blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>The Square Demo</h1>
+  <div class='squareContainer'>
+    <div id='red' class='square'>
+    </div>
+    <div id='green' class='square'>
+    </div>
+    <div id='blue' class='square'>
+    </div>
+  </div>
+  <hr />
+  <div class='buttonContainer'>
+    <button id='hideAllTheSquares'> Hide All the Squares</button>
+    <button id='showAllTheSquares'> Show All the Squares</button>
+    <button id='toggleGreen'>Toggle Green</button>
+    <button id='toggleBlue'>ToggleBlue</button>
+    <button id='toggleRed'>Toggle Red</button>
+  </div>
+</body>
+<script>
+  const colors = ['blue', 'green', 'yellow', 'orange'];
+  const squares = Array.from(document.getElementsByClassName('square'));
+  const green = document.getElementById('green');
+  const blue = document.getElementById('blue');
+  const red = document.getElementById('red');
+
+
+  const redSquare = document.getElementById('red');
+  console.log(squares)
+  document.getElementById('hideAllTheSquares').addEventListener('click', () => {
+    squares.forEach((element) => {
+      element.style.display = 'none';
+    })
+  })
+  document.getElementById('showAllTheSquares').addEventListener('click', () => {
+    squares.forEach((element) => {
+      element.style.display = 'inherit';
+    })
+  })
+  document.getElementById('toggleGreen').addEventListener('click', () => {
+    green.style.display = green.style.display === 'none' ? 'inherit' : 'none';
+  })
+  document.getElementById('toggleBlue').addEventListener('click', () => {
+    blue.style.display = blue.style.display === 'none' ? 'inherit' : 'none';
+  })
+  document.getElementById('toggleRed').addEventListener('click', () => {
+    red.style.display = red.style.display === 'none' ? 'inherit' : 'none';
+  })
+
+
+
+</script>
+
+</html>
